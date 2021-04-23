@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Ejercicios y salud</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Ejercicios y Salud</string>
+    <string name="nav_header_subtitle">¡Haz ejercicio y mantente saludable!</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+<!-- Nav menu strings -->
+    <string name="menu_plan">Mi plan</string>
+    <string name="menu_inform">Informe</string>
+    <string name="menu_user_perfil">Perfil</string>
+    <string name="menu_change_plan">Cambiar plan</string>
+    <string name="menu_restore_plan">Reiniciar  plan</string>
+</resources>

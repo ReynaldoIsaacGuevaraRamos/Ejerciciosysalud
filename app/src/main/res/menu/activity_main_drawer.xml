@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_plan"
+            android:icon="@drawable/ic_list_plan"
+            android:title="@string/menu_plan" />
+        <item
+            android:id="@+id/nav_informe"
+            android:icon="@drawable/ic_informe"
+            android:title="@string/menu_inform" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_user_perfil"
+            android:title="@string/menu_user_perfil" />
+        <item
+            android:id="@+id/nav_change_plan"
+            android:icon="@drawable/ic_change_plan"
+            android:title="@string/menu_change_plan" />
+        <item
+            android:id="@+id/nav_restore_plan"
+            android:icon="@drawable/ic_restore_plan"
+            android:title="@string/menu_restore_plan" />
+    </group>
+</menu>
