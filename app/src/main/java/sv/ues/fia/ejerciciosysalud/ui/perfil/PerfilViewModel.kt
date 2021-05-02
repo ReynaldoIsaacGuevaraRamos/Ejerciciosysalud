@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class PerfilViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is slideshow Fragment"
+        value = "@string/perfil_estatura"
     }
     val text: LiveData<String> = _text
 }
