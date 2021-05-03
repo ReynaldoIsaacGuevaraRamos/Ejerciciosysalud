@@ -22,10 +22,7 @@ class PerfilFragment : Fragment() {
         perfilViewModel =
                 ViewModelProvider(this).get(PerfilViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_perfil, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        perfilViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        val textView: TextView = root.findViewById(R.id.textView2)
         return root
     }
 }

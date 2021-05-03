@@ -4,7 +4,22 @@
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+
     <color name="black">#FF000000</color>
+    <color name="peso">#e75748</color>
+    <!--     Colores  utilizados en las interfacez-->
+    <color name="red_barsandbuttons">#DF411F</color>
+    <color name="bluedark_background">#1A2945</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="teal_700_text_Tittle">#FF018786</color>
+    <color name="darkgray_textView_Editext">#AAAAAA</color>
+
+    <!--     Colores  para los tipos de condicion fisica-->
+    <color name="blue_delgadez_severa">#203bd2</color>
+    <color name="skyblue_peso_bajo">#117eff</color>
+    <color name="cyan_peso_saludable">#08cadf</color>
+    <color name="yellow_sobrepeso">#ffcb08</color>
+    <color name="orange_obesidad_moderada">#ff940a</color>
+    <color name="red_obesidad_severa">#ff0434</color>
+
 </resources>

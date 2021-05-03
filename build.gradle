@@ -21,9 +21,12 @@ allprojects {
     }
 }
 
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
 ext {
     activityVersion = '1.2.2'
     appCompatVersion = '1.2.0'
@@ -34,3 +37,4 @@ ext {
     roomVersion = '2.2.6'
     navigationVersion = '2.3.5'
 }
+

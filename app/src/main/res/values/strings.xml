@@ -6,10 +6,28 @@
     <string name="nav_header_subtitle">¡Haz ejercicio y mantente saludable!</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-<!-- Nav menu strings -->
+    <!-- 000  Nav menu strings -->
     <string name="menu_plan">Mi plan</string>
     <string name="menu_inform">Informe</string>
     <string name="menu_user_perfil">Perfil</string>
     <string name="menu_change_plan">Cambiar plan</string>
     <string name="menu_restore_plan">Reiniciar  plan</string>
+    <!-- 000 Perfil fragment strings -->
+    <string name="perfil_title_estado_fisico">Condición fisica</string>
+    <string name="perfil_altura">Altura</string>
+    <string name="perfil_peso">Peso</string>
+    <string name="perfil_hint_altura">180.00 cm</string>
+    <string name="perfil_hint_peso">70.00 Kg</string>
+    <string name="perfil_button_guardar">Guardar</string>
+
+    <string name="perfil_title_recordatorio">Recordatorio</string>
+    <string name="perfil_hora">Hora</string>
+    <string name="perfil_hint_hora">00:00 HH:mm</string>
+    <string name="perfil_hora_establecer">ESTABLECER</string>
+
+    <string name="perfil_title_plan">Configuración de plan</string>
+    <string name="perfil_dificulta">Dificultad</string>
+    <string name="perfil_grupo_muscular">Grupo muscular</string>
+
+
 </resources>
