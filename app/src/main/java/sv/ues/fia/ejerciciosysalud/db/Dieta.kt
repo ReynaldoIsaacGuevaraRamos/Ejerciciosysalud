@@ -9,7 +9,7 @@ import java.util.*
 data class DietaEntity(
         @PrimaryKey(autoGenerate = true)
         var IDieta: Int,
-        var Porciones: MutableList<String>,
+        var Porciones: Double,
         var Tiempo: Double,
-        var Alimentos: MutableList<String>,
+        var Alimentos: String,
 )

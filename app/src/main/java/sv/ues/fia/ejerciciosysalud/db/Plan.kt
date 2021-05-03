@@ -13,4 +13,5 @@ data class PlanEntity(
         var Estado: Boolean,
         var PlanesFinalizados: Int,
         var T_Kcal: Double,
+        var Completado: Boolean,
 )
