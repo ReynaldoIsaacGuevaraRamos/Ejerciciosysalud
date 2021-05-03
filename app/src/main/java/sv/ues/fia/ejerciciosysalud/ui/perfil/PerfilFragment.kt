@@ -23,7 +23,6 @@ class PerfilFragment : Fragment() {
                 ViewModelProvider(this).get(PerfilViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_perfil, container, false)
         val textView: TextView = root.findViewById(R.id.textView2)
-
         return root
     }
 }
