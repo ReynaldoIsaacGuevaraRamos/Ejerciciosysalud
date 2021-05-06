@@ -80,25 +80,7 @@ class EjercicioSaludRepository(private val db: EjercicioSaludDB) {
     suspend fun delete(plan: PlanEntity) {
         db.PlanDao().delete(plan)
     }
-    /***************************
-     * Rutina Salud repository
-     ***************************/
-    val rutina: LiveData<List<RutinaEntity>> = db.RutinaDao().getAll()
-    @Suppress("RedundantSuspendModifier")
-    @WorkerThread
-    suspend fun insert(rutina: RutinaEntity) {
-        db.RutinaDao().insert(rutina)
-    }
-    @Suppress("RedundantSuspendModifier")
-    @WorkerThread
-    suspend fun update(rutina: RutinaEntity) {
-        db.RutinaDao().update(rutina)
-    }
-    @Suppress("RedundantSuspendModifier")
-    @WorkerThread
-    suspend fun delete(rutina: RutinaEntity) {
-        db.RutinaDao().delete(rutina)
-    }
+
     /***************************
      * Usuario repository
      ***************************/

@@ -29,5 +29,25 @@
     <string name="perfil_dificulta">Dificultad</string>
     <string name="perfil_grupo_muscular">Grupo muscular</string>
 
+    <!-- 000 Plan fragment strings -->
+    <string name="informe_title_Historial">Historial</string>
+    <string name="informe_plan">Plan</string>
+    <string name="informe_total_dias">Dias</string>
+    <string name="informe_altura">Altura</string>
+    <string name="informe_peso">Peso</string>
+    <string name="informe_calorias">Kcal</string>
+    <string name="informe_imc">IMC</string>
+
+    <!-- RecyclerView plan dia -->
+    <string name="plan_dia">Dia</string>
+    <string name="plan_iniciar_rutina">Iniciar</string>
+
+    <!-- RecyclerView rutina de ejercicios -->
+
+    <!-- RecyclerView informe -->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

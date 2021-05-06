@@ -7,9 +7,8 @@ import java.util.*
 
 @Entity(tableName = "Dieta")
 data class DietaEntity(
-        @PrimaryKey(autoGenerate = true)
-        var IDieta: Int,
-        var Porciones: Double,
-        var Tiempo: Double,
+        @PrimaryKey
+        var IDieta: String,
+        var Tiempo: String,
         var Alimentos: String,
 )

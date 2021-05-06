@@ -30,9 +30,9 @@ import androidx.room.ForeignKey.CASCADE
 )
 data class UsuarioEntity(
         @ColumnInfo(name = "IDieta")
-        val IDieta:  Int,
+        val IDieta:  String,
         @ColumnInfo(name = "ID_Plan")
-        val ID_Plan: Int,
+        val ID_Plan: String,
         @ColumnInfo(name = "IDEstado")
         val IDEstado: Int,
 )
