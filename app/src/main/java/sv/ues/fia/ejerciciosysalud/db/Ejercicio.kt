@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.util.*
-@Entity(tableName = "Ejercicio")
 
+@Entity(tableName = "Ejercicio")
 data class EjercicioEntity(
         @PrimaryKey
         var IDejer: String,

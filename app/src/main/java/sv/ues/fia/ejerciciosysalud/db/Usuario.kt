@@ -34,5 +34,5 @@ data class UsuarioEntity(
         @ColumnInfo(name = "ID_Plan")
         val ID_Plan: String,
         @ColumnInfo(name = "IDEstado")
-        val IDEstado: Int,
+        val IDEstado: Int
 )

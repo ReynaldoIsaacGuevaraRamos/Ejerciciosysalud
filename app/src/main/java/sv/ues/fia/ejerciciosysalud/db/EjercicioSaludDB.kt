@@ -9,7 +9,6 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import java.time.chrono.IsoChronology.INSTANCE
 
 @Database(
         entities = [
@@ -31,7 +30,7 @@ abstract class EjercicioSaludDB : RoomDatabase() {
     abstract fun UsuarioDao(): UsuarioDao
 
 
-    private class EjerciciosCallback(
+    private class EjerciciosDBCallback(
             private val scope: CoroutineScope
     ) : RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
@@ -50,9 +49,12 @@ abstract class EjercicioSaludDB : RoomDatabase() {
             db.DietaDao().deleteAll()
             db.PlanDao().deleteAll()
             db.UsuarioDao().deleteAll()
-            val DI_IDieta = listOf("DIEDEL1", "DIEDEL2", "DIEDEL3", "DIEDEL4", "DIEDEL5", "DIEDEL6", "DIEDEL7", "DIEDEL8", "DIEDEL9", "DIEDEL10", "DIEDEL12",
-                    "DIEDEL13", "DIESAL1", "DIESAL2", "DIESAL3", "DIESAL4", "DIESAL5", "DIESAL6", "DIESAL7", "DIESAL8", "DIESAL9", "DIESAL10", "DIESAL11", "DIESAL12", "DIESAL13", "DIESOB1", "DIESOB2", "DIESOB3", "DIESOB4", "DIESOB5", "DIESOB6", "DIESOB7", "DIESOB8", "DIESOB9", "DIESOB10", "DIESOB11", "DIESOB12", "DIESOB13")
-            val DI_Tiempo = listOf("Desayuno", "Merienda", "Todos", "Almuerzo", "Merienda", "Todos", "Desayuno", "Merienda", "Cena", "Merienda", "Merienda", "Desayuno", "Merienda", "Almuerzo", "Almuerzo", "Desayuno", "Todos", "Todos", "Todos", "Cena", "Todos", "Todos", "Todos", "Todos", "Desayuno", "Desayuno", "Desayuno", "Cena", "Todos", "Todos", "Todos", "Cena", "Todos", "Desayuno", "Todos", "Almuerzo", "Almuerzo", "Todos")
+            val DI_IDieta = listOf("DIEDEL1", "DIEDEL2", "DIEDEL3", "DIEDEL4", "DIEDEL5", "DIEDEL6", "DIEDEL7", "DIEDEL8", "DIEDEL9", "DIEDEL10", "DIEDEL12", "DIEDEL13"
+                , "DIESAL1", "DIESAL2", "DIESAL3", "DIESAL4", "DIESAL5", "DIESAL6", "DIESAL7", "DIESAL8", "DIESAL9", "DIESAL10", "DIESAL11", "DIESAL12", "DIESAL13"
+                , "DIESOB1", "DIESOB2", "DIESOB3", "DIESOB4", "DIESOB5", "DIESOB6", "DIESOB7", "DIESOB8", "DIESOB9", "DIESOB10", "DIESOB11", "DIESOB12", "DIESOB13")
+            val DI_Tiempo = listOf("Desayuno", "Merienda", "Todos", "Almuerzo", "Merienda", "Todos", "Desayuno", "Merienda", "Cena", "Merienda", "Merienda", "Desayuno", "Merienda"
+                , "Almuerzo", "Almuerzo", "Desayuno", "Todos", "Todos", "Todos", "Cena", "Todos", "Todos", "Todos", "Todos", "Desayuno", "Desayuno",
+                "Desayuno", "Cena", "Todos", "Todos", "Todos", "Cena", "Todos", "Desayuno", "Todos", "Almuerzo", "Almuerzo", "Todos", "Todos")
             val DI_Alimentos = listOf("Lácteos enteros", "Batidos de proteínas", " Arrozes y legumbres", "Carnes rojas",
                     "Nueces y mantequilla de nueces", "Pan integral", "Cerales, papas y otros alimentos con almidon", "Suplementos proteínicos", "Mariscos", "Frutas deshidratadas", "Chocolate oscuro", "Huevos ", "Fruta y verdura", "Mariscos", "Carnes magras", "Huevos ", "Productos de soya", "Nueces y mantequilla de nueces", "Lacteos bajos en grasa", "Pastas", "Guisos y tortillas ", "Verduras", "Arrozes y legumbres", "Pan integral", "Cerales, papas  y otros alimentos con almidon", "Lácteos bajos en grasa", "Huevos", "Atun ", "Frutas", "Verduras", "Productos de soya", "Alimentos de fibra ", "Pan integral", "Cerales integrales, papas  y otros alimentos con almidon", "Frutos secos", "Carne magra", "Pechuga de pollo", "Avena")
             val PLAN_ID_Plan = listOf("P_PRIN", "P_INTER", "P_AVAN")
@@ -155,7 +157,7 @@ abstract class EjercicioSaludDB : RoomDatabase() {
                         )
                 )
             }
-            for (i in 0..6) {
+            for (i in 0..38) {
                 db.DietaDao().insert(
                         DietaEntity(
                                 DI_IDieta[i],
@@ -180,8 +182,8 @@ abstract class EjercicioSaludDB : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                         context.applicationContext,
                         EjercicioSaludDB::class.java,
-                        "registro_nota_db"
-                ).addCallback(EjerciciosCallback(scope)).build()
+                        "registro_ejercicios_db"
+                ).addCallback(EjerciciosDBCallback(scope)).build()
                 INSTANCE = instance
                 instance
             }

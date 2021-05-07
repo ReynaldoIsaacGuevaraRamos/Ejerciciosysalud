@@ -8,10 +8,12 @@ import java.util.*
 @Entity(tableName = "EstadoSalud")
 data class EstadoSaludEntity(
         @PrimaryKey(autoGenerate = true)
+        @ColumnInfo(name = "IDEstado")
         var IDEstado: Int,
+        @ColumnInfo(name = "Total_Dias", defaultValue = "0")
         var TotalDias: Int,
         var Peso: Float,
         var Altura: Float,
-        var IMC: Float,
+        var IMC: Float
         )
 

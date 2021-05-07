@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--  Dias /Altura / Peso / Kcal / IMC  -->
+    <TextView
+        android:id="@+id/view_totalDias"
+        android:layout_width="0dp"
+        android:layout_weight=".20"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/view_peso"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_weight=".2"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/view_altura"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_weight=".2"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/view_IMC"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_weight=".2"
+        android:layout_height="50dp" />
+
+
+</LinearLayout>

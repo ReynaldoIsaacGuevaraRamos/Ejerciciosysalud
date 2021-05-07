@@ -3,6 +3,7 @@ package sv.ues.fia.ejerciciosysalud.db
 import androidx.lifecycle.LiveData
 import androidx.room.*
 
+@Dao
 interface UsuarioDao {
     @Query("SELECT * FROM Usuario")
     fun getAll(): LiveData<List<UsuarioEntity>>

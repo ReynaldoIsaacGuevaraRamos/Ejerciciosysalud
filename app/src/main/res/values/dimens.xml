@@ -7,6 +7,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <!-- 000 Perfil fragment strings -->
     <dimen name="space_components_barra_top">10dp</dimen>
+    <dimen name="space_components_barra_lefandrigth">10dp</dimen>
     <dimen name="space_components_top">5dp</dimen>
     <dimen name="space_components_title">15dp</dimen>
 </resources>

@@ -9,14 +9,16 @@
         android:id="@+id/nav_plan"
         android:name="sv.ues.fia.ejerciciosysalud.ui.plan.PlanFragment"
         android:label="@string/menu_plan"
-        tools:layout="@layout/fragment_plan" />
-
+        tools:layout="@layout/fragment_plan">
+        <action
+            android:id="@+id/action_nav_plan_to_nav_guardar_plan"
+            app:destination="@id/nav_informe" />
+    </fragment>
     <fragment
         android:id="@+id/nav_informe"
         android:name="sv.ues.fia.ejerciciosysalud.ui.informe.InformeFragment"
         android:label="@string/menu_inform"
         tools:layout="@layout/fragment_informe" />
-
     <fragment
         android:id="@+id/nav_perfil"
         android:name="sv.ues.fia.ejerciciosysalud.ui.perfil.PerfilFragment"

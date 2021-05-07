@@ -1,5 +1,6 @@
 package sv.ues.fia.ejerciciosysalud.ui.plan
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,21 +9,57 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import sv.ues.fia.ejerciciosysalud.EjercicioSaludApplication
 import sv.ues.fia.ejerciciosysalud.R
+import sv.ues.fia.ejerciciosysalud.db.PlanEntity
 
-class PlanFragment : Fragment() {
+class PlanFragment : Fragment(), PlanListAdapter.OnPlanClickListener  {
 
-    private lateinit var planViewModel: PlanViewModel
-
+    companion object {
+        fun newInstance() = PlanFragment()
+    }
+    private lateinit var viewModel: PlanViewModel
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        planViewModel =
-                ViewModelProvider(this).get(PlanViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_plan, container, false)
+        val application = activity?.application as EjercicioSaludApplication
+        viewModel = ViewModelProvider(requireActivity(),
+            PlanViewModelFactory(application.repository)).get(PlanViewModel::class.java)
+        return inflater.inflate(R.layout.fragment_plan, container, false)
+    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerviewPlan)
+        val adapter = PlanListAdapter(this)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        viewModel.planes.observe(viewLifecycleOwner, Observer { plan ->
+            plan?.let { adapter.submitList(it) }
+        })
 
-        return root
+    }
+    override fun onEditPlanClicked(plan: PlanEntity) {
+        viewModel.planActual = plan
+        findNavController().navigate(R.id.action_nav_plan_to_nav_guardar_plan)
+    }
+    override fun onDeleteAlumnoClicked(plan: PlanEntity) {
+        val builder = AlertDialog.Builder(activity)
+        builder.setMessage("Estas seguro que deseas borrar el alumno con carnet: ${plan.ID_Plan}?")
+            .setCancelable(false)
+            .setPositiveButton("Si") { dialog, id ->
+                viewModel.delete(plan)
+            }
+            .setNegativeButton("No") { dialog, id ->
+                dialog.dismiss()
+            }
+        val alert = builder.create()
+        alert.show()
     }
 }
