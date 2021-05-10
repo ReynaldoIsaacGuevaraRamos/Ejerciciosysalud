@@ -5,17 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import sv.ues.fia.ejerciciosysalud.EjercicioSaludApplication
 import sv.ues.fia.ejerciciosysalud.R
-import sv.ues.fia.ejerciciosysalud.db.PlanEntity
+import sv.ues.fia.ejerciciosysalud.db.EjercicioEntity
+
 
 class PlanFragment : Fragment(), PlanListAdapter.OnPlanClickListener  {
 
@@ -40,18 +39,18 @@ class PlanFragment : Fragment(), PlanListAdapter.OnPlanClickListener  {
         val adapter = PlanListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
-        viewModel.planes.observe(viewLifecycleOwner, Observer { plan ->
+        viewModel.ejercicios.observe(viewLifecycleOwner, Observer { plan ->
             plan?.let { adapter.submitList(it) }
         })
 
     }
-    override fun onEditPlanClicked(plan: PlanEntity) {
-        viewModel.planActual = plan
+    override fun onEditPlanClicked(plan: EjercicioEntity) {
+        viewModel.ejercicioActual = plan
         findNavController().navigate(R.id.action_nav_plan_to_nav_guardar_plan)
     }
-    override fun onDeleteAlumnoClicked(plan: PlanEntity) {
+    override fun onDeletePlanClicked(plan: EjercicioEntity) {
         val builder = AlertDialog.Builder(activity)
-        builder.setMessage("Estas seguro que deseas borrar el alumno con carnet: ${plan.ID_Plan}?")
+        builder.setMessage("Estas seguro que deseas borrar el alumno con carnet: ${plan.IDejer}")
             .setCancelable(false)
             .setPositiveButton("Si") { dialog, id ->
                 viewModel.delete(plan)

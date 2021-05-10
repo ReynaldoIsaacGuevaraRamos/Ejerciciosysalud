@@ -56,7 +56,7 @@ class InformeListAdapter(onInformeClickListener: OnInformeClickListener) :
 
         override fun areContentsTheSame(oldItem:EstadoSaludEntity, newItem:EstadoSaludEntity):
                 Boolean {
-            return oldItem.IDEstado == newItem.IDEstado
+            return oldItem.ID_Estado == newItem.ID_Estado
         }
     }
 

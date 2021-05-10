@@ -12,8 +12,13 @@
         tools:layout="@layout/fragment_plan">
         <action
             android:id="@+id/action_nav_plan_to_nav_guardar_plan"
-            app:destination="@id/nav_informe" />
+            app:destination="@id/nav_ejercicio" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_ejercicio"
+        android:name="sv.ues.fia.ejerciciosysalud.ui.plan.EjercicioIndicacionesFragment"
+        android:label="@string/ejer_name"
+        tools:layout="@layout/fragment_ejercicio_indicaciones" />
     <fragment
         android:id="@+id/nav_informe"
         android:name="sv.ues.fia.ejerciciosysalud.ui.informe.InformeFragment"

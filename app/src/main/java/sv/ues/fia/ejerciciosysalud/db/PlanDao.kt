@@ -15,4 +15,5 @@ interface PlanDao {
     fun delete(plan: PlanEntity)
     @Query("DELETE FROM 'Plan'")
     suspend fun deleteAll()
+
 }

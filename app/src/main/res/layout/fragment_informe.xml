@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="100dp"
         android:layout_marginTop="@dimen/space_components_barra_top"
         android:layout_marginLeft="@dimen/space_components_barra_lefandrigth"
         android:layout_marginRight="@dimen/space_components_barra_lefandrigth"
@@ -37,8 +37,53 @@
                 android:textColor="@color/teal_700_text_Tittle"
                 android:textSize="18dp" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--  Dias /Altura / Peso / Kcal / IMC  -->
+            <TextView
+                android:id="@+id/view_totalDias"
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/bluedark_background"
+                android:text="@string/informe_total_dias"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/view_peso"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/bluedark_background"
+                android:text="@string/perfil_altura"
+                android:layout_weight=".2"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/view_altura"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/bluedark_background"
+                android:text="@string/informe_peso"
+                android:layout_weight=".2"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/view_IMC"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/bluedark_background"
+                android:text="@string/informe_imc"
+                android:layout_weight=".2"
+                android:layout_height="50dp" />
+
 
         </LinearLayout>
+
 
 
     </androidx.cardview.widget.CardView>

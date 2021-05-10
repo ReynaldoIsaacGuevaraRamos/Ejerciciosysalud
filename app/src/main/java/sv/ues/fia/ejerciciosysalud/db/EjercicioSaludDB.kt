@@ -61,7 +61,7 @@ abstract class EjercicioSaludDB : RoomDatabase() {
             val PLAN_Dificultad = listOf("Principiante", "Intermedio", "Avanzado")
             val PLAN_TiempoAprox = listOf("5 - 10 min", "10 - 20 min", "20 -30 min")
             val PLAN_Kcal = listOf(1900f, 3375f, 4875f)
-            val EJER_IDejer = listOf("EJER1", "EJER2", "EJER3", "EJER4", "EJER5", "EJER6", "EJER7", "EJER8", "EJER9", "EJER10", "EJER11", "EJER12", "EJER13", "EJER14", "EJER15", "EJER16", "EJER17", "EJER18", "EJER19", "EJER20", "EJER21", "EJER22")
+            val EJER_IDejer = listOf("ac1", "ac2", "ac3", "ac4", "ac5", "ac6", "ac7", "ac8", "ac9", "ac10", "ac11", "ac12", "ac13", "ac14", "ac15", "ac16", "ac17", "ac18", "ac19", "ac20", "ac21", "ac22")
             val EJER_NombreEjer = listOf("Burpess", "Sentadillas", "Elevación de piernas recogidas", "Elevación lateral", "Empuje de abdomen ", "Plancha y posición de rana", "Sentadilla con balanceo", "Abdominal en V", "Elevación de piernas", "Trotar", "Plancha amplia con elevación de brazo", "Elevación de rodilla", "Reverencia", "Reverencia con elevación de pierna ", "Toque de pie", "Flexiones de brazos", "Saltos de tijera", "Saltos cruzados", "Zancadas laterales", "Zancada y patada", "Zancada derecha/izquierda", "Plancha básica")
             val EJER_Indicaciones = listOf("Comienza de pie. Baja y manten la posicion de sentadilla y \n" +
                     "pon las manos en el suelo.Estira las piernas y los brazos a la vez. \n" +
@@ -135,7 +135,7 @@ abstract class EjercicioSaludDB : RoomDatabase() {
             val ES_Altura = 180f
             val ES_IMC = 21.6f
 
-            db.EstadoSaludDao().insert(EstadoSaludEntity(USU_IDEstado, ES_TotalDias, ES_Peso, ES_Altura, ES_IMC))
+
 
 
             for (i in 0..2) {
@@ -166,6 +166,7 @@ abstract class EjercicioSaludDB : RoomDatabase() {
                         )
                 )
             }
+            db.EstadoSaludDao().insert(EstadoSaludEntity(ID_Estado = USU_IDEstado,TotalDias =  ES_TotalDias,Peso =  ES_Peso,Altura =ES_Altura, IMC= ES_IMC))
             db.UsuarioDao().insert(UsuarioEntity(USU_IDieta, USU_ID_Plan, USU_IDEstado))
         }
 
@@ -182,7 +183,7 @@ abstract class EjercicioSaludDB : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                         context.applicationContext,
                         EjercicioSaludDB::class.java,
-                        "registro_ejercicios_db"
+                        "registro_ejercicios_db_new"
                 ).addCallback(EjerciciosDBCallback(scope)).build()
                 INSTANCE = instance
                 instance

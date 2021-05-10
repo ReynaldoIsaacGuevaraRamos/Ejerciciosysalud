@@ -2,24 +2,28 @@ package sv.ues.fia.ejerciciosysalud.ui.plan
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
+import sv.ues.fia.ejerciciosysalud.db.EjercicioEntity
 import sv.ues.fia.ejerciciosysalud.db.EjercicioSaludRepository
 import sv.ues.fia.ejerciciosysalud.db.PlanEntity
 
 class PlanViewModel(private val repository: EjercicioSaludRepository) : ViewModel() {
 
-    val planes: LiveData<List<PlanEntity>> = repository.plan
-    var planActual: PlanEntity? = null
-    fun insert(plan: PlanEntity) = viewModelScope.launch {
+    val ejercicios: LiveData<List<EjercicioEntity>> = repository.ejercicio
+
+    var ejercicioActual: EjercicioEntity? = null
+    fun insert(plan: EjercicioEntity) = viewModelScope.launch {
         repository.insert(plan)
     }
 
-    fun update(plan: PlanEntity) = viewModelScope.launch {
+    fun update(plan: EjercicioEntity) = viewModelScope.launch {
         repository.update(plan)
     }
 
-    fun delete(plan: PlanEntity) = viewModelScope.launch {
+    fun delete(plan: EjercicioEntity) = viewModelScope.launch {
         repository.delete(plan)
     }
+
+
 }
 
 class PlanViewModelFactory(private val repository: EjercicioSaludRepository) :

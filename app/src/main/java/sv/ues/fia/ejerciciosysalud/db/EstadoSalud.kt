@@ -9,7 +9,7 @@ import java.util.*
 data class EstadoSaludEntity(
         @PrimaryKey(autoGenerate = true)
         @ColumnInfo(name = "IDEstado")
-        var IDEstado: Int,
+        var ID_Estado: Int,
         @ColumnInfo(name = "Total_Dias", defaultValue = "0")
         var TotalDias: Int,
         var Peso: Float,

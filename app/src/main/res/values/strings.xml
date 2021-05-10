@@ -32,6 +32,7 @@
     <!-- 000 Plan fragment strings -->
     <string name="informe_title_Historial">Historial</string>
     <string name="informe_plan">Plan</string>
+    <string name="ejercicios">Ejercicios</string>
     <string name="informe_total_dias">Dias</string>
     <string name="informe_altura">Altura</string>
     <string name="informe_peso">Peso</string>
@@ -43,6 +44,9 @@
     <string name="plan_iniciar_rutina">Iniciar</string>
 
     <!-- RecyclerView rutina de ejercicios -->
+
+    <string name="ejer_name">Ejercicio</string>
+    <string name="ejer_indicaciones">Indicaciones</string>
 
     <!-- RecyclerView informe -->
 
